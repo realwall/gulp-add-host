@@ -1,0 +1,28 @@
+{
+  "name": "gulp-add-host",
+  "version": "1.0.0",
+  "description": "add host and protocol for script and link in html",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/realwall/gulp-add-host.git"
+  },
+  "keywords": [
+    "gulp",
+    "add",
+    "host"
+  ],
+  "author": "realwall",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/realwall/gulp-add-host/issues"
+  },
+  "homepage": "https://github.com/realwall/gulp-add-host#readme",
+  "dependencies": {
+    "gulp-util": "^3.0.8",
+    "through2": "^2.0.3"
+  }
+}
