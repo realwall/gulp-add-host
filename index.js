@@ -4,10 +4,9 @@ var PluginError = gutil.PluginError;
 
 
 // 插件级别的函数（处理文件）
-function cachebustMap(config) {
+function gulpAddHost(config) {
   // 创建一个 stream 通道，以让每个文件通过
   var stream = through.obj(function(file, enc, cb) {
-    debugger;
     if (file.isStream()) {
       return cb();
     }
@@ -19,6 +18,9 @@ function cachebustMap(config) {
       }
       if(config.link){
         contents = contents.replace(/<link\s*(rel="[^"]+")?\s*(media="[^"]+")?\s*href\s*=\s*\"([^"]+)"/gi, '<link $1 $2 href="' + config.link + '$3"');
+      }
+      if(config.img){
+        contents = contents.replace(/<img\s*(class="[^"]+")?\s*src\s*=\s*\"([^"]+)"/gi, '<img $1 src="' + config.img + '$2"');
       }
       
       //do something
@@ -38,7 +40,7 @@ function cachebustMap(config) {
 };
 
 // 导出插件主函数
-module.exports = cachebustMap;
+module.exports = gulpAddHost;
 
 
 
