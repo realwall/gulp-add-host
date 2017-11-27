@@ -25,6 +25,10 @@ function cachebustMap(config) {
       if(config.img && (/\.(less|css)$/gi).test(file.path)){
         contents = contents.replace(/url\(\s*"*'*([^)]+)\s*"*'*\)/gi, 'url(' + config.img + '$1)');
       }
+      //如果需要把路径中的res去掉
+      if(config.no_res && (/\.(php|html|vue|less|css)$/gi).test(file.path)){
+        contents = contents.replace(/\.fenqile\.cn\/work_loan_auth\/res\//gi, '.fenqile.cn/work_loan_auth/');
+      }
       
       //do something
       file.contents = new Buffer(contents, enc);
