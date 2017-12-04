@@ -14,9 +14,9 @@ add host and protocal for link and script tags in html file
         gulp
             .src(VIEW)
             .pipe(addHost({
-                script: 'http://cresauth.fenqile.cn',
-                link: 'http://cresauth1.fenqile.cn',
-                img: 'http://cresauth2.fenqile.cn'
+                script: 'http://cresauth.xxx.cn',
+                link: 'http://cresauth1.xxx.cn',
+                img: 'http://cresauth2.xxx.cn'
             }))
             .pipe(gulp.dest(VIEW_DEST));
     });

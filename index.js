@@ -27,7 +27,7 @@ function cachebustMap(config) {
       }
       //如果需要把路径中的res去掉
       if(config.no_res && (/\.(php|html|vue|less|css)$/gi).test(file.path)){
-        contents = contents.replace(/\.fenqile\.cn\/work_loan_auth\/res\//gi, '.fenqile.cn/work_loan_auth/');
+        contents = contents.replace(/\.cn\/work_loan_auth\/res\//gi, '.cn/work_loan_auth/');
       }
       
       //do something
