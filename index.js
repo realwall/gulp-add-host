@@ -14,7 +14,7 @@ function cachebustMap(config) {
     if (file.isBuffer()) {
       var contents = file.contents.toString(enc);
       if(config.script && (/\.(php|html|vue)$/gi).test(file.path)){
-        contents = contents.replace(/<script\s*(type\s*=\s*"text\/javascript")?\s*src\s*=\s*"([^"]+)"/gi, '<script $1 src="' + config.script + '$2"');
+        contents = contents.replace(/<script\s*(type\s*=\s*"text\/javascript")?\s*src\s*=\s*"([^"]+)"/gi, '<script $1 src="' + config.script + '$2" crossorigin');
       }
       if(config.link && (/\.(php|html|vue)$/gi).test(file.path)){
         contents = contents.replace(/<link\s*(rel="[^"]+")?\s*(media="[^"]+")?\s*href\s*=\s*\"([^"]+)"/gi, '<link $1 $2 href="' + config.link + '$3"');
